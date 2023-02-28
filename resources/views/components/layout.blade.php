@@ -19,23 +19,23 @@
                 theme: {
                     extend: {
                         colors: {
-                            laravel: "#ef3b2d",
-                            darkPurple: "#160C28",
-                            napYellow: "#EFCB68",
-                            honeyDew: "#E1EFE6",
-                            ashGray: "#AEB7B3",
+                            mintCream: "#EFF9F0",
+                            lavanderBlush: "#EEE5E9",
+                            gray: "#7C7C7C",
+                            photoBlue: "#92DCE5",
+                            eggBlue: "#52DEE5",
                             richBlack: "#000411",
                         },
                     },
                 },
             };
         </script>
-        <title>IProjektas | IT Projektų portalas</title>
+        <title>IProject | Find your dream project</title>
     </head>
-    <body class="mb-48 bg-ashGray">
-        <nav class="flex justify-between items-center mb-4">
+    <body class="mb-48 bg-lavanderBlush">
+        <nav class="flex justify-between items-center bg-lavanderBlush">
             <a href="/"
-                ><img class="w-80" src="{{asset('images/logo.png')}}" alt="" class="logo"
+                ><img class="w-20" src="{{asset('images/logo.png')}}" alt="" class="logo"
             /></a>
             <ul class="flex space-x-6 mr-6 text-lg">
                 @auth
@@ -78,13 +78,13 @@
     {{$slot}}
     </main>
     <footer
-    class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-darkPurple text-white h-24 mt-24 opacity-90 md:justify-center"
+    class="fixed bottom-0 left-0 w-full flex items-center justify-start bg-lavanderBlush text-richBlack h-24 mt-24 opacity-95 md:justify-center"
 >
-    <p class="ml-2">Copyright &copy; 2023 VL, All Rights reserved</p>
+    <p class="ml-2 font-bold">Copyright &copy; 2023 VL, All Rights reserved</p>
 
     <a
         href="/listings/create"
-        class="absolute top-1/3 rounded-lg right-10 transition ease-in-out delay-150 bg-napYellow hover:-translate-y-1 hover:scale-110 hover:bg-napYellow duration-300 py-2 px-5 text-richBlack"
+        class="absolute top-1/3 rounded-lg right-10 transition ease-in-out delay-150 bg-photoBlue hover:-translate-y-1 hover:scale-110 hover:bg-gray hover:text-white duration-300 py-2 px-5 text-richBlack"
         >Post a Project!</a
     >
 </footer>

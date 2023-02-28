@@ -1,5 +1,5 @@
 <x-layout>
-    <x-card class="p-10 max-w-lg mx-auto mt-24">
+    <x-card class="p-10 max-w-lg mx-auto mt-16">
     <header class="text-center">
         <h2 class="text-2xl font-bold uppercase mb-1">
             Login
@@ -50,16 +50,16 @@
         <div class="mb-6">
             <button
                 type="submit"
-                class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
+                class="bg-photoBlue text-richBlack rounded py-2 px-4 hover:bg-gray hover:text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
             >
                 Log in
             </button>
         </div>
 
         <div class="mt-8">
-            <p>
+            <p class="">
                 Don't have an account?
-                <a href="/register" class="text-laravel"
+                <a href="/register" class="text-eggBlue"
                     >Register</a
                 >
             </p>
