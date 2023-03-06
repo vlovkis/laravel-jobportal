@@ -1,4 +1,4 @@
-<form action="" class="bg-lavanderBlush mb-10 pb-2">
+<form action="" class="bg-lavanderBlush mb-6 pb-2">
     <div class="relative border-2 border-gray-100 mb-4 ml-4 mr-4 rounded-full border-eggBlue">
         <div class="absolute top-4 left-3">
             <i
@@ -14,7 +14,7 @@
         <div class="absolute top-2 right-2">
             <button
                 type="submit"
-                class="h-10 w-20 text-richBlack font-bold rounded-full bg-napYellow hover:bg-gray hover:text-white duration-500"
+                class="h-10 w-20 text-richBlack font-bold rounded-full bg-photoBlue hover:bg-gray hover:text-white duration-500"
             >
                 Search
             </button>

@@ -8,10 +8,10 @@
             alt=""
         />
         <div>
-            <h3 class="text-2xl">
+            <h3 class="text-xl font-bold">
                 <a href="/listings/{{$listing->id}}">{{$listing->title }}</a>
             </h3>
-            <div class="text-xl font-bold mb-4">{{$listing->company}}</div>
+            <div class="text-lg mb-4">{{$listing->company}}</div>
             <x-listing-tags :tagsCsv='$listing->tags' />
             <div class="text-lg mt-4">
                 <i class="fa-solid fa-location-dot"></i> {{$listing->location}}

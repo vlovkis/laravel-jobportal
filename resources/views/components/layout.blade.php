@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="images/favicon.ico" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -33,47 +34,77 @@
         <title>IProject | Find your dream project</title>
     </head>
     <body class="mb-48 bg-lavanderBlush">
-        <nav class="flex justify-between items-center bg-lavanderBlush">
-            <a href="/"
+        @auth
+        <nav class="px-2 bg-lavanderBlush border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+            <div class="container flex flex-wrap items-center justify-between mx-auto">
+                <a href="/"
                 ><img class="w-20" src="{{asset('images/logo.png')}}" alt="" class="logo"
             /></a>
-            <ul class="flex space-x-6 mr-6 text-lg">
-                @auth
+              <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <span class="block py-2 pl-3 pr-4 text-gray-400 rounded md:border-0 md:p-0">
+                            Welcome {{auth()->user()->name}}
+                        </span>
+                      </li>
+                      <li>
+                        <a href="/" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
+                      </li>
+                  <li>
+                    <a href="/listings/manage" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Manage Listings</a>
+                  </li>
+                  <li>
+                    <a href="/contact" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Help</a>
+                  </li>
+                  <li>
+                    <a href="/listings/pricing" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+                  </li>                  
+                  <li>
+                      <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-photoBlue dark:focus:text-black dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Profile <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+                      <!-- Dropdown menu -->
+                      <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                          <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                            <li>
+                              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-black">Dashboard</a>
+                            </li>
+                            <li><form class='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-black' method="POST" action="/logout">
+                                @csrf
+                                <button type="submit">
+                                    <span>Logout</span>
+                                </button>
+                            </form>
+                              </li>
+                          </ul>
+                            
+                      </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          @else
+          <nav class="px-2 bg-lavanderBlush border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+            <div class="container flex flex-wrap items-center justify-between mx-auto">
+                <a href="/"
+                ><img class="w-20" src="{{asset('images/logo.png')}}" alt="" class="logo"
+            /></a>
+              <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+
+                <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                    <span class="font-bold uppercase">
-                        Welcome {{auth()->user()->name}}
-                    </span>
+                  <a href="/contact" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Help</a>
                 </li>
                 <li>
-                    <a href="/listings/manage" class="hover:text-laravel"
-                        ><i class="fa-solid fa-gear"></i>
-                        Manage Listings</a
-                    >
-                </li>
-                <li>
-                    <form class='inline hover:text-laravel' method="POST" action="/logout">
-                    @csrf
-                    <button type="submit">
-                        <i class="fa-solid fa-door-closed"></i>
-                        <span>Logout</span>
-                    </button>
-                    </form>
-                </li>
-                @else
-                <li>
-                    <a href="/register" class="hover:text-napYellow duration-500"
-                        ><i class="fa-solid fa-user-plus"></i> Registration</a
-                    >
-                </li>
-                <li>
-                    <a href="/login" class="hover:text-napYellow duration-500"
-                        ><i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        Login</a
-                    >
-                </li>
-                @endauth
-            </ul>
-        </nav>
+                    <a href="/register" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Register</a>
+                  </li>
+                  <li>
+                    <a href="/login" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</a>
+                  </li>                  
+                </ul>
+              </div>
+            </div>
+          </nav>
+          @endauth
         <main>
     {{$slot}}
     </main>
@@ -90,5 +121,7 @@
 </footer>
 
  <x-flash-message />
+ <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
 </body>
 </html>

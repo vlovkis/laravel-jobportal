@@ -3,7 +3,9 @@
 use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ContactUsFormController;
 use App\Http\Controllers\ListingController;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,11 @@ Route::get('/', [ListingController::class, 'index'] );
 
 //Show Create Form
 Route::get('/listings/create', [ListingController::class, 'create'] )->middleware('auth');
+
+Route::get('/listings/pricing' , function (){ return view('listings.pricing'); })->name('pricing');
+
+Route::get('/contact', [ContactUsFormController::class, 'createForm']);
+Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
 //Store Listing data
 Route::post('/listings', [ListingController::class, 'store'])->middleware('auth');
