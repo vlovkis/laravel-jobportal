@@ -1,6 +1,6 @@
 <x-layout>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+
     <div class="">
         <h1 class="text-xl">Support</h1>
         <p>Write your message to us and we will reach you within 1-2 business days</p>
