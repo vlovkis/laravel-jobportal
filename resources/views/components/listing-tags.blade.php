@@ -7,7 +7,7 @@
 <ul class="flex">
     @foreach($tags as $tag)
     <li
-        class="flex items-center justify-center bg-photoBlue text-richBlack rounded-xl py-1 px-3 mr-2 text-xs"
+        class="flex items-center justify-center bg-photoBlue text-white rounded-xl py-1 px-3 mr-2 text-xs"
     >
         <a href="/?tag={{$tag}}">{{$tag}}</a>
     </li>

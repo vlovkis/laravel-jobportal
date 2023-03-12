@@ -21,10 +21,10 @@
                     extend: {
                         colors: {
                             mintCream: "#EFF9F0",
-                            lavanderBlush: "#EEE5E9",
+                            lavanderBlush: "#ffffff",
                             gray: "#7C7C7C",
-                            photoBlue: "#92DCE5",
-                            eggBlue: "#52DEE5",
+                            photoBlue: "#2768e8",
+                            eggBlue: "#2768e8",
                             richBlack: "#000411",
                         },
                     },
@@ -38,13 +38,13 @@
         <nav class="px-2 bg-lavanderBlush border-gray-200 dark:bg-gray-900 dark:border-gray-700">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
                 <a href="/"
-                ><img class="w-20" src="{{asset('images/logo.png')}}" alt="" class="logo"
+                ><img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo"
             /></a>
               <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
                 <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
-                        <span class="block py-2 pl-3 pr-4 text-gray-400 rounded md:border-0 md:p-0">
-                            Welcome {{auth()->user()->name}}
+                        <span class="block py-2 pl-3 pr-4 rounded md:border-0 md:p-0">
+                            Welcome <span class="text-eggBlue">{{auth()->user()->name}}!</span>
                         </span>
                       </li>
                       <li>
@@ -82,6 +82,7 @@
               </div>
             </div>
           </nav>
+          <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
           @else
           <nav class="px-2 bg-lavanderBlush border-gray-200 dark:bg-gray-900 dark:border-gray-700">
             <div class="container flex flex-wrap items-center justify-between mx-auto">
@@ -91,19 +92,23 @@
               <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
 
                 <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                <li>
-                  <a href="/contact" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Help</a>
-                </li>
+                   <li>
+                    <a href="/login" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</a>
+                  </li> 
                 <li>
                     <a href="/register" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Register</a>
                   </li>
                   <li>
-                    <a href="/login" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</a>
-                  </li>                  
+                    <a href="/listings/pricing" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+                  </li> 
+                <li>
+                  <a href="/contact" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-photoBlue dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Help</a>
+                </li> 
                 </ul>
               </div>
             </div>
           </nav>
+          <hr class="h-px bg-gray-200 border-0 dark:bg-gray-700">
           @endauth
         <main>
     {{$slot}}
@@ -115,7 +120,7 @@
 
     <a
         href="/listings/create"
-        class="absolute top-1/3 rounded-lg right-10 transition ease-in-out delay-150 bg-photoBlue hover:-translate-y-1 hover:scale-110 hover:bg-gray hover:text-white duration-300 py-2 px-5 text-richBlack"
+        class="absolute top-1/3 rounded-md right-10 transition ease-in-out delay-150 bg-photoBlue hover:-translate-y-1 hover:scale-110 hover:bg-gray hover:text-white duration-300 py-2 px-5 text-white"
         >Post a Project!</a
     >
 </footer>
