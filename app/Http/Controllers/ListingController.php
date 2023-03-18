@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
 
 class ListingController extends Controller
 {
@@ -85,6 +86,10 @@ class ListingController extends Controller
          //Make sure user is owner
          if($listing->user_id != auth()->id()){
             abort(403, 'Unauthorized action');
+        }
+
+        if($listing->logo && Storage::disk('public')->exists($listing->logo)) {
+            Storage::disk('public')->delete($listing->logo);
         }
 
         $listing->delete();
