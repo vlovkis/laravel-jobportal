@@ -7,7 +7,7 @@ class="relative h-72 flex flex-col justify-center align-center text-center space
 ></div>
 
 <div class="z-10">
-    <h1 class="text-8xl uppercase text-honeyDew ml-6 font-bold">
+    <h1 class="text-6xl uppercase text-honeyDew ml-6 font-bold">
         <span class="text-napYellow ">I</span><span class="text-richBlack">Project</span>
     </h1>
     <p class="text-2xl text-richBlack my-4 ml-6">
@@ -18,7 +18,7 @@ class="relative h-72 flex flex-col justify-center align-center text-center space
         @else
         <a
             href="/register"
-            class="inline-block text-richBlack bg-photoBlue py-2 px-4 rounded-xl uppercase mt-2 hover:bg-gray hover:text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+            class="inline-block text-white bg-photoBlue py-2 px-4 rounded-xl uppercase mt-2 hover:bg-gray hover:text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
             >Register to post</a
         >
         @endauth
