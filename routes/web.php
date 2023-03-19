@@ -21,10 +21,13 @@ use GuzzleHttp\Middleware;
 //All Listings
 Route::get('/', [ListingController::class, 'index'] );
 
+Route::get('/listings/sort', [ListingController::class, 'sort'])->name('listings.sort');
+
 //Show Create Form
 Route::get('/listings/create', [ListingController::class, 'create'] )->middleware('auth');
 
 Route::get('/listings/pricing' , function (){ return view('listings.pricing'); })->name('pricing');
+Route::get('/profile' , function (){ return view('profile'); })->name('profile');
 
 Route::get('/contact', [ContactUsFormController::class, 'createForm']);
 Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');

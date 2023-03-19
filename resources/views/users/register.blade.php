@@ -46,6 +46,23 @@
         </div>
 
         <div class="mb-6">
+            <label for="country" class="inline-block text-lg mb-2 font-bold"
+                >Country</label
+            ><br>
+            <select id="country" name="country" class="form-control border border-gray-200 rounded p-2 w-full">
+                <option value="">-- Select Country --</option>
+                @foreach (App\Models\Country::orderBy('name')->get() as $country)
+                    <option value="{{ $country->code }}">{{ $country->name }}</option>
+                @endforeach
+            </select>
+            @error('country')
+            <p class="text-red-500 text-xs mt-1">
+                {{$message}}
+            </p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
             <label
                 for="password"
                 class="inline-block text-lg mb-2 font-bold"

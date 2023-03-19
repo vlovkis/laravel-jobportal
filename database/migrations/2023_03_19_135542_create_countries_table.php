@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class SupportTable extends Migration
+class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class SupportTable extends Migration
      */
     public function up()
     {
-        Schema::create('support_requests', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('title');
-            $table->text('support_message');
+        Schema::create('countries', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('code');
             $table->timestamps();
         });
+    
     }
 
     /**
@@ -28,6 +29,6 @@ class SupportTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('countries');
     }
 }

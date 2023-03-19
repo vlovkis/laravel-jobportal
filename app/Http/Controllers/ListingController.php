@@ -15,13 +15,24 @@ class ListingController extends Controller
     return view('listings.index', [
         'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(10)
     ]);
+
    }
+
+   public function sort(Request $request)
+{
+    $sort = $request->input('sort', 'created_at');
+    $order = $request->input('order', 'asc');
+    $listings = Listing::orderBy($sort, $order)->paginate(10);
+
+    return view('listings.index', compact('listings', 'sort', 'order'));
+}
+
    //show single listing
    public function show(Listing $listing){
     return view('listings.show', [
         'listing' => $listing
     ]);
-   }
+}
 
    //Show create form
    public function create(){
