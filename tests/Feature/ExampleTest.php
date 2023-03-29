@@ -12,9 +12,38 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_pradziosStatusas()
     {
         $response = $this->get('/');
+
+        $response->assertStatus(200);
+
+    }
+
+    public function test_loginStatusas(){
+
+        $response = $this->get('/login');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_registerStatusas(){
+
+        $response = $this->get('/register');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_contactStatusas(){
+
+        $response = $this->get('/contact');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_profileStatusas(){
+
+        $response = $this->get('/profile');
 
         $response->assertStatus(200);
     }
