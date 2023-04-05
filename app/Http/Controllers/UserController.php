@@ -8,6 +8,7 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
+
     // Show register/create form
     public function create(){
         return view('users.register');
@@ -65,4 +66,6 @@ class UserController extends Controller
 
         } return back()->withErrors(['email' => 'Invalid credentials'])->onlyInput('email');
     }
+
+    
 }

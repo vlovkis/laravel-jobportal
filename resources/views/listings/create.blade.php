@@ -153,7 +153,7 @@
 
                         <div class="mb-6">
                             <button
-                                class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
+                                class="bg-eggBlue text-white rounded py-2 px-4 hover:bg-black"
                             >
                                 Create Gig
                             </button>
